@@ -1,0 +1,58 @@
+[
+    {
+        "merged": "org.tues.tudy.composeApp-release-33:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "org.tues.tudy.composeApp-androidMain-34:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "org.tues.tudy.composeApp-release-33:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "org.tues.tudy.composeApp-androidMain-34:/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "org.tues.tudy.composeApp-release-33:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "org.tues.tudy.composeApp-androidMain-34:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "org.tues.tudy.composeApp-release-33:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "org.tues.tudy.composeApp-androidMain-34:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "org.tues.tudy.composeApp-release-33:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "org.tues.tudy.composeApp-androidMain-34:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "org.tues.tudy.composeApp-release-33:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "org.tues.tudy.composeApp-androidMain-34:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "org.tues.tudy.composeApp-release-33:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "org.tues.tudy.composeApp-androidMain-34:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "org.tues.tudy.composeApp-release-33:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "org.tues.tudy.composeApp-androidMain-34:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "org.tues.tudy.composeApp-release-33:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "org.tues.tudy.composeApp-androidMain-34:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "org.tues.tudy.composeApp-release-33:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "org.tues.tudy.composeApp-androidMain-34:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "org.tues.tudy.composeApp-release-33:/drawable_ic_launcher_background.xml.flat",
+        "source": "org.tues.tudy.composeApp-androidMain-34:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "org.tues.tudy.composeApp-release-33:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "org.tues.tudy.composeApp-androidMain-34:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "org.tues.tudy.composeApp-release-33:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "org.tues.tudy.composeApp-androidMain-34:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "org.tues.tudy.composeApp-release-33:/drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "org.tues.tudy.composeApp-androidMain-34:/drawable-v24/ic_launcher_foreground.xml"
+    }
+]
