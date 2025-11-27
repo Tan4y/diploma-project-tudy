@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "org.tues.tudy.composeApp-mergeDebugResources-33:/values/values.xml",
+            "outputFile": "org.tues.tudy.composeApp-mergeDebugResources-36:/values/values.xml",
             "map": [
                 {
                     "source": "/Users/admin/.gradle/caches/8.14.3/transforms/8920e527ea2a7e6883b0adbe076b10d6/transformed/customview-poolingcontainer-1.0.0/res/values/values.xml",
