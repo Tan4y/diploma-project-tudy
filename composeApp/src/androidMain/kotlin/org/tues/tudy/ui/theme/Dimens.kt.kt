@@ -1,7 +1,7 @@
 // ui/theme/Dimens.kt
 import androidx.compose.ui.unit.dp
 
-object `Dimens.kt` {
+object Dimens {
     val Space0 = 0.dp
     val Space25 = 4.dp
     val Space50 = 8.dp
