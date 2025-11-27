@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "org.tues.tudy.composeApp-mergeDebugResources-33:/values-en-rAU/values-en-rAU.xml",
+            "outputFile": "org.tues.tudy.composeApp-mergeDebugResources-36:/values-en-rAU/values-en-rAU.xml",
             "map": [
                 {
                     "source": "/Users/admin/.gradle/caches/8.14.3/transforms/dc98ebddbe3879dd83daa46f4fc34500/transformed/ui-release/res/values-en-rAU/values-en-rAU.xml",

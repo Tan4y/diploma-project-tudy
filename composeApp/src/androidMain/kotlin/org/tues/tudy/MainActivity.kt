@@ -6,6 +6,8 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import org.tues.tudy.ui.auth.RegisterScreen
+import org.tues.tudy.viewmodel.RegisterState
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -13,13 +15,13 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         setContent {
-            App()
+            RegisterScreen()
         }
     }
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
-fun AppAndroidPreview() {
-    App()
+fun RegisterScreenPreview() {
+    RegisterScreen(previewState = RegisterState())
 }

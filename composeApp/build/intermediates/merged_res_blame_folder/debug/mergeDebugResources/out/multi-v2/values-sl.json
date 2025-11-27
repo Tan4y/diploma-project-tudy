@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "org.tues.tudy.composeApp-mergeDebugResources-33:/values-sl/values-sl.xml",
+            "outputFile": "org.tues.tudy.composeApp-mergeDebugResources-36:/values-sl/values-sl.xml",
             "map": [
                 {
                     "source": "/Users/admin/.gradle/caches/8.14.3/transforms/d713fa9b5bfb2a64dc0a1dafa3863aad/transformed/material3/res/values-sl/values-sl.xml",

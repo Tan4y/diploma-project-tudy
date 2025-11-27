@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "org.tues.tudy.composeApp-mergeDebugResources-33:/values-vi/values-vi.xml",
+            "outputFile": "org.tues.tudy.composeApp-mergeDebugResources-36:/values-vi/values-vi.xml",
             "map": [
                 {
                     "source": "/Users/admin/.gradle/caches/8.14.3/transforms/56c6ad89bace0124f81e1288db3fe18b/transformed/foundation-release/res/values-vi/values-vi.xml",
