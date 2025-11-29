@@ -1,0 +1,32 @@
+# Gradle
+.gradle/
+build/
+**/build/
+
+# Local config
+local.properties
+
+# IDE files
+.idea/
+*.iml
+
+# Android
+captures/
+output.json
+
+# Reports
+*.html
+
+# Kotlin
+*.kotlin_module
+*.bin
+
+# Lock files
+*.lock
+gradle.lockfile
+
+# Logs
+*.log
+
+# macOS
+.DS_Store
