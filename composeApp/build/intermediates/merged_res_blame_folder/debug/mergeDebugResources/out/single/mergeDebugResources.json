@@ -28,12 +28,20 @@
         "source": "org.tues.tudy.composeApp-androidMain-37:/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
+        "merged": "org.tues.tudy.composeApp-debug-35:/font_lato.ttf.flat",
+        "source": "org.tues.tudy.composeApp-androidMain-37:/font/lato.ttf"
+    },
+    {
         "merged": "org.tues.tudy.composeApp-debug-35:/mipmap-mdpi_ic_launcher_round.png.flat",
         "source": "org.tues.tudy.composeApp-androidMain-37:/mipmap-mdpi/ic_launcher_round.png"
     },
     {
         "merged": "org.tues.tudy.composeApp-debug-35:/mipmap-hdpi_ic_launcher.png.flat",
         "source": "org.tues.tudy.composeApp-androidMain-37:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "org.tues.tudy.composeApp-debug-35:/font_fredoka.ttf.flat",
+        "source": "org.tues.tudy.composeApp-androidMain-37:/font/fredoka.ttf"
     },
     {
         "merged": "org.tues.tudy.composeApp-debug-35:/mipmap-anydpi-v26_ic_launcher.xml.flat",
