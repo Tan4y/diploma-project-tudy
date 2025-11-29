@@ -19,6 +19,7 @@ kotlin {
         androidMain.dependencies {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
+<<<<<<< HEAD
             implementation("com.squareup.retrofit2:retrofit:2.11.0")
             implementation("com.squareup.retrofit2:converter-gson:2.11.0")
             implementation("com.squareup.okhttp3:okhttp:4.12.0")
@@ -26,6 +27,9 @@ kotlin {
             implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.2")
             implementation("androidx.lifecycle:lifecycle-runtime-compose:2.8.2")
             implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.8.2")
+=======
+            implementation(compose.material3)
+>>>>>>> bf1cde9faaaa54c0278c15623f5cde966516a25b
         }
         commonMain.dependencies {
             implementation(compose.runtime)
