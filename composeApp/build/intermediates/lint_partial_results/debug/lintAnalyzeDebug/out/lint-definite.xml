@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.9.1" type="incidents">
+
+    <incident
+        id="AndroidGradlePluginVersion"
+        severity="warning"
+        message="A newer version of com.android.application than 8.9.1 is available: 8.13.1. (There is also a newer version of 8.9.𝑥 available, if upgrading to 8.13.1 is difficult: 8.9.3)">
+        <fix-alternatives>
+            <fix-replace
+                description="Change to 8.13.1"
+                family="Update versions"
+                oldString="8.9.1"
+                replacement="8.13.1"
+                priority="0"/>
+            <fix-replace
+                description="Change to 8.9.3"
+                family="Update versions"
+                robot="true"
+                independent="true"
+                oldString="8.9.1"
+                replacement="8.9.3"
+                priority="0"/>
+        </fix-alternatives>
+        <location
+            file="$HOME/Desktop/school/diploma-project-tudy/gradle/libs.versions.toml"
+            line="2"
+            column="7"
+            startOffset="17"
+            endLine="2"
+            endColumn="14"
+            endOffset="24"/>
+    </incident>
+
+    <incident
+        id="AndroidGradlePluginVersion"
+        severity="warning"
+        message="A newer version of com.android.library than 8.9.1 is available: 8.13.1. (There is also a newer version of 8.9.𝑥 available, if upgrading to 8.13.1 is difficult: 8.9.3)">
+        <fix-alternatives>
+            <fix-replace
+                description="Change to 8.13.1"
+                family="Update versions"
+                oldString="8.9.1"
+                replacement="8.13.1"
+                priority="0"/>
+            <fix-replace
+                description="Change to 8.9.3"
+                family="Update versions"
+                robot="true"
+                independent="true"
+                oldString="8.9.1"
+                replacement="8.9.3"
+                priority="0"/>
+        </fix-alternatives>
+        <location
+            file="$HOME/Desktop/school/diploma-project-tudy/gradle/libs.versions.toml"
+            line="2"
+            column="7"
+            startOffset="17"
+            endLine="2"
+            endColumn="14"
+            endOffset="24"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.lifecycle:lifecycle-viewmodel-compose than 2.8.2 is available: 2.10.0">
+        <fix-replace
+            description="Change to 2.10.0"
+            family="Update versions"
+            oldString="2.8.2"
+            replacement="2.10.0"
+            priority="0"/>
+        <location
+            file="${:composeApp*projectDir}/build.gradle.kts"
+            line="25"
+            column="28"
+            startOffset="812"
+            endLine="25"
+            endColumn="82"
+            endOffset="866"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.lifecycle:lifecycle-runtime-compose than 2.8.2 is available: 2.10.0">
+        <fix-replace
+            description="Change to 2.10.0"
+            family="Update versions"
+            oldString="2.8.2"
+            replacement="2.10.0"
+            priority="0"/>
+        <location
+            file="${:composeApp*projectDir}/build.gradle.kts"
+            line="26"
+            column="28"
+            startOffset="895"
+            endLine="26"
+            endColumn="80"
+            endOffset="947"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.lifecycle:lifecycle-livedata-ktx than 2.8.2 is available: 2.10.0">
+        <fix-replace
+            description="Change to 2.10.0"
+            family="Update versions"
+            oldString="2.8.2"
+            replacement="2.10.0"
+            priority="0"/>
+        <location
+            file="${:composeApp*projectDir}/build.gradle.kts"
+            line="27"
+            column="28"
+            startOffset="976"
+            endLine="27"
+            endColumn="77"
+            endOffset="1025"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.activity:activity-compose than 1.11.0 is available: 1.12.0">
+        <fix-replace
+            description="Change to 1.12.0"
+            family="Update versions"
+            oldString="1.11.0"
+            replacement="1.12.0"
+            priority="0"/>
+        <location
+            file="$HOME/Desktop/school/diploma-project-tudy/gradle/libs.versions.toml"
+            line="6"
+            column="21"
+            startOffset="118"
+            endLine="6"
+            endColumn="29"
+            endOffset="126"/>
+    </incident>
+
+    <incident
+        id="ObsoleteSdkInt"
+        severity="warning"
+        message="This folder configuration (`v24`) is unnecessary; `minSdkVersion` is 24. Merge all the resources in this folder into `drawable`.">
+        <fix-data file="${:composeApp*debug*MAIN*sourceProvider*0*resDir*1}/drawable-v24" folderName="drawable" requiresApi="24"/>
+        <location
+            file="${:composeApp*debug*MAIN*sourceProvider*0*resDir*1}/drawable-v24"/>
+    </incident>
+
+    <incident
+        id="MonochromeLauncherIcon"
+        severity="warning"
+        message="The application adaptive icon is missing a monochrome tag">
+        <location
+            file="${:composeApp*debug*MAIN*sourceProvider*0*resDir*1}/mipmap-anydpi-v26/ic_launcher.xml"
+            line="2"
+            column="1"
+            startOffset="39"
+            endLine="5"
+            endColumn="17"
+            endOffset="272"/>
+    </incident>
+
+    <incident
+        id="MonochromeLauncherIcon"
+        severity="warning"
+        message="The application adaptive roundIcon is missing a monochrome tag">
+        <location
+            file="${:composeApp*debug*MAIN*sourceProvider*0*resDir*1}/mipmap-anydpi-v26/ic_launcher_round.xml"
+            line="2"
+            column="1"
+            startOffset="39"
+            endLine="5"
+            endColumn="17"
+            endOffset="272"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use version catalog instead">
+        <fix-composite
+            description="Replace with new library catalog declaration for retrofit2-retrofit"
+            robot="true">
+            <fix-replace
+                description="Replace with retrofitVersion = &quot;2.11.0&quot;..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="retrofitVersion = &quot;2.11.0&quot;&#xA;"
+                priority="0">
+                <range
+                    file="$HOME/Desktop/school/diploma-project-tudy/gradle/libs.versions.toml"
+                    startOffset="331"
+                    endOffset="331"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with retrofit2-retrofit = { module = &quot;com.squareup.retrofit2:retrofit&quot;, version.ref = &quot;retrofitVersion&quot; }..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="retrofit2-retrofit = { module = &quot;com.squareup.retrofit2:retrofit&quot;, version.ref = &quot;retrofitVersion&quot; }&#xA;"
+                priority="0">
+                <range
+                    file="$HOME/Desktop/school/diploma-project-tudy/gradle/libs.versions.toml"
+                    startOffset="1394"
+                    endOffset="1394"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with libs.retrofit2.retrofit"
+                robot="true"
+                replacement="libs.retrofit2.retrofit"
+                priority="0">
+                <range
+                    file="${:composeApp*projectDir}/build.gradle.kts"
+                    startOffset="603"
+                    endOffset="643"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:composeApp*projectDir}/build.gradle.kts"
+            line="22"
+            column="28"
+            startOffset="603"
+            endLine="22"
+            endColumn="68"
+            endOffset="643"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use version catalog instead">
+        <fix-composite
+            description="Replace with new library catalog declaration for retrofit2-converter-gson"
+            robot="true">
+            <fix-replace
+                description="Replace with converterGsonVersion = &quot;2.11.0&quot;..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="converterGsonVersion = &quot;2.11.0&quot;&#xA;"
+                priority="0">
+                <range
+                    file="$HOME/Desktop/school/diploma-project-tudy/gradle/libs.versions.toml"
+                    startOffset="296"
+                    endOffset="296"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with retrofit2-converter-gson = { module = &quot;com.squareup.retrofit2:converter-gson&quot;, version.ref = &quot;converterGsonVersion&quot; }..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="retrofit2-converter-gson = { module = &quot;com.squareup.retrofit2:converter-gson&quot;, version.ref = &quot;converterGsonVersion&quot; }&#xA;"
+                priority="0">
+                <range
+                    file="$HOME/Desktop/school/diploma-project-tudy/gradle/libs.versions.toml"
+                    startOffset="1394"
+                    endOffset="1394"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with libs.retrofit2.converter.gson"
+                robot="true"
+                replacement="libs.retrofit2.converter.gson"
+                priority="0">
+                <range
+                    file="${:composeApp*projectDir}/build.gradle.kts"
+                    startOffset="672"
+                    endOffset="718"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:composeApp*projectDir}/build.gradle.kts"
+            line="23"
+            column="28"
+            startOffset="672"
+            endLine="23"
+            endColumn="74"
+            endOffset="718"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use version catalog instead">
+        <fix-composite
+            description="Replace with new library catalog declaration for okhttp3-okhttp"
+            robot="true">
+            <fix-replace
+                description="Replace with okhttpVersion = &quot;4.12.0&quot;..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="okhttpVersion = &quot;4.12.0&quot;&#xA;"
+                priority="0">
+                <range
+                    file="$HOME/Desktop/school/diploma-project-tudy/gradle/libs.versions.toml"
+                    startOffset="331"
+                    endOffset="331"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with okhttp3-okhttp = { module = &quot;com.squareup.okhttp3:okhttp&quot;, version.ref = &quot;okhttpVersion&quot; }..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="okhttp3-okhttp = { module = &quot;com.squareup.okhttp3:okhttp&quot;, version.ref = &quot;okhttpVersion&quot; }&#xA;"
+                priority="0">
+                <range
+                    file="$HOME/Desktop/school/diploma-project-tudy/gradle/libs.versions.toml"
+                    startOffset="1394"
+                    endOffset="1394"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with libs.okhttp3.okhttp"
+                robot="true"
+                replacement="libs.okhttp3.okhttp"
+                priority="0">
+                <range
+                    file="${:composeApp*projectDir}/build.gradle.kts"
+                    startOffset="747"
+                    endOffset="783"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:composeApp*projectDir}/build.gradle.kts"
+            line="24"
+            column="28"
+            startOffset="747"
+            endLine="24"
+            endColumn="64"
+            endOffset="783"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use version catalog instead">
+        <fix-composite
+            description="Replace with new library catalog declaration for lifecycle-viewmodel-compose"
+            robot="true">
+            <fix-replace
+                description="Replace with lifecycleViewmodelComposeVersion = &quot;2.8.2&quot;..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="lifecycleViewmodelComposeVersion = &quot;2.8.2&quot;&#xA;"
+                priority="0">
+                <range
+                    file="$HOME/Desktop/school/diploma-project-tudy/gradle/libs.versions.toml"
+                    startOffset="331"
+                    endOffset="331"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with lifecycle-viewmodel-compose = { module = &quot;androidx.lifecycle:lifecycle-viewmodel-compose&quot;, version.ref = &quot;lifecycleViewmodelComposeVersion&quot; }..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="lifecycle-viewmodel-compose = { module = &quot;androidx.lifecycle:lifecycle-viewmodel-compose&quot;, version.ref = &quot;lifecycleViewmodelComposeVersion&quot; }&#xA;"
+                priority="0">
+                <range
+                    file="$HOME/Desktop/school/diploma-project-tudy/gradle/libs.versions.toml"
+                    startOffset="1394"
+                    endOffset="1394"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with libs.lifecycle.viewmodel.compose"
+                robot="true"
+                replacement="libs.lifecycle.viewmodel.compose"
+                priority="0">
+                <range
+                    file="${:composeApp*projectDir}/build.gradle.kts"
+                    startOffset="812"
+                    endOffset="866"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:composeApp*projectDir}/build.gradle.kts"
+            line="25"
+            column="28"
+            startOffset="812"
+            endLine="25"
+            endColumn="82"
+            endOffset="866"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use version catalog instead">
+        <fix-composite
+            description="Replace with new library catalog declaration for lifecycle-runtime-compose"
+            robot="true">
+            <fix-replace
+                description="Replace with lifecycleRuntimeComposeVersion = &quot;2.8.2&quot;..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="lifecycleRuntimeComposeVersion = &quot;2.8.2&quot;&#xA;"
+                priority="0">
+                <range
+                    file="$HOME/Desktop/school/diploma-project-tudy/gradle/libs.versions.toml"
+                    startOffset="331"
+                    endOffset="331"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with lifecycle-runtime-compose = { module = &quot;androidx.lifecycle:lifecycle-runtime-compose&quot;, version.ref = &quot;lifecycleRuntimeComposeVersion&quot; }..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="lifecycle-runtime-compose = { module = &quot;androidx.lifecycle:lifecycle-runtime-compose&quot;, version.ref = &quot;lifecycleRuntimeComposeVersion&quot; }&#xA;"
+                priority="0">
+                <range
+                    file="$HOME/Desktop/school/diploma-project-tudy/gradle/libs.versions.toml"
+                    startOffset="1394"
+                    endOffset="1394"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with libs.lifecycle.runtime.compose"
+                robot="true"
+                replacement="libs.lifecycle.runtime.compose"
+                priority="0">
+                <range
+                    file="${:composeApp*projectDir}/build.gradle.kts"
+                    startOffset="895"
+                    endOffset="947"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:composeApp*projectDir}/build.gradle.kts"
+            line="26"
+            column="28"
+            startOffset="895"
+            endLine="26"
+            endColumn="80"
+            endOffset="947"/>
+    </incident>
+
+    <incident
+        id="UseTomlInstead"
+        severity="warning"
+        message="Use version catalog instead">
+        <fix-composite
+            description="Replace with new library catalog declaration for lifecycle-livedata-ktx"
+            robot="true">
+            <fix-replace
+                description="Replace with lifecycleLivedataKtxVersion = &quot;2.8.2&quot;..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="lifecycleLivedataKtxVersion = &quot;2.8.2&quot;&#xA;"
+                priority="0">
+                <range
+                    file="$HOME/Desktop/school/diploma-project-tudy/gradle/libs.versions.toml"
+                    startOffset="331"
+                    endOffset="331"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with lifecycle-livedata-ktx = { module = &quot;androidx.lifecycle:lifecycle-livedata-ktx&quot;, version.ref = &quot;lifecycleLivedataKtxVersion&quot; }..."
+                robot="true"
+                oldString="_lint_insert_begin_"
+                replacement="lifecycle-livedata-ktx = { module = &quot;androidx.lifecycle:lifecycle-livedata-ktx&quot;, version.ref = &quot;lifecycleLivedataKtxVersion&quot; }&#xA;"
+                priority="0">
+                <range
+                    file="$HOME/Desktop/school/diploma-project-tudy/gradle/libs.versions.toml"
+                    startOffset="1394"
+                    endOffset="1394"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with libs.lifecycle.livedata.ktx"
+                robot="true"
+                replacement="libs.lifecycle.livedata.ktx"
+                priority="0">
+                <range
+                    file="${:composeApp*projectDir}/build.gradle.kts"
+                    startOffset="976"
+                    endOffset="1025"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:composeApp*projectDir}/build.gradle.kts"
+            line="27"
+            column="28"
+            startOffset="976"
+            endLine="27"
+            endColumn="77"
+            endOffset="1025"/>
+    </incident>
+
+</incidents>

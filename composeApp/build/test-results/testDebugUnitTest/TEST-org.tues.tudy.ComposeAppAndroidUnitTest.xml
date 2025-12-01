@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.tues.tudy.ComposeAppAndroidUnitTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-11-29T01:47:01.606Z" hostname="admins-MacBook-Pro.local" time="0.027">
+  <properties/>
+  <testcase name="example" classname="org.tues.tudy.ComposeAppAndroidUnitTest" time="0.027"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
