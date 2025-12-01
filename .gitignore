@@ -3,7 +3,7 @@ gradle/**/executionHistory/
 gradle/**/buildOutputCleanup/
 gradle/**/*.lock
 
-build/
+composeApp/build/
 **/build/
 
 local.properties
