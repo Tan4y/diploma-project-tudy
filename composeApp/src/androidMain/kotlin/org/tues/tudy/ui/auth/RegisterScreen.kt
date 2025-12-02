@@ -1,11 +1,11 @@
 package org.tues.tudy.ui.auth
 
+import BaseColor100
 import org.tues.tudy.R
 import CustomTextField
 import PrimaryColor2
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.gestures.snapping.SnapPosition
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.layout.Arrangement
@@ -15,9 +15,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import org.tues.tudy.ui.components.CustomButton
+import org.tues.tudy.ui.components.LinkButton
 import org.tues.tudy.viewmodel.RegisterState
 import org.tues.tudy.viewmodel.RegisterViewModel
 
@@ -32,111 +33,145 @@ fun RegisterScreen(
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
 
-    // Error states for each field
     var usernameError by remember { mutableStateOf<String?>(null) }
     var emailError by remember { mutableStateOf<String?>(null) }
     var passwordError by remember { mutableStateOf<String?>(null) }
 
     val focusManager = LocalFocusManager.current
 
-    Column(
+    Box(
         modifier = Modifier
             .fillMaxSize()
-            .padding(16.dp)
+            .padding(Dimens.Space100)
             .clickable(
                 interactionSource = remember { MutableInteractionSource() },
                 indication = null
-            ) {
-                focusManager.clearFocus()
-            },
-        verticalArrangement = Arrangement.Center
+            ) { focusManager.clearFocus() }
     ) {
+
+        // MAIN CONTENT
         Column(
             modifier = Modifier
+                .align(Alignment.Center)
                 .fillMaxWidth(),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.spacedBy(Dimens.Space50)
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Image(
-                painter = painterResource(id = R.drawable.tudylogo),
-                contentDescription = "App Logo"
+
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.spacedBy(Dimens.Space50)
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.tudylogo),
+                    contentDescription = "App Logo"
+                )
+
+                Text(
+                    text = "Create Account",
+                    style = AppTypography.Heading3,
+                    color = PrimaryColor2
+                )
+            }
+
+            Spacer(modifier = Modifier.height(Dimens.Space450))
+
+            CustomTextField(
+                value = username,
+                onValueChange = {
+                    username = it
+                    usernameError = null
+                },
+                label = "Username",
+                error = usernameError
             )
 
-            Text(
-                text = "Create Account",
-                style = AppTypography.Heading3,
-                color = PrimaryColor2,
-                textAlign = TextAlign.Center
+            Spacer(modifier = Modifier.height(20.dp))
+
+            CustomTextField(
+                value = email,
+                onValueChange = {
+                    email = it
+                    emailError = null
+                },
+                label = "Email",
+                error = emailError
+            )
+
+            Spacer(modifier = Modifier.height(20.dp))
+
+            CustomTextField(
+                value = password,
+                onValueChange = {
+                    password = it
+                    passwordError = null
+                },
+                label = "Password",
+                error = passwordError
             )
         }
 
-        Spacer(modifier = Modifier.height(Dimens.Space450))
 
-        // USERNAME
-        CustomTextField(
-            value = username,
-            onValueChange = {
-                username = it
-                usernameError = null // clear error on typing
-            },
-            label = "Username",
-            error = usernameError
-        )
-
-        Spacer(modifier = Modifier.height(20.dp))
-
-        // EMAIL
-        CustomTextField(
-            value = email,
-            onValueChange = {
-                email = it
-                emailError = null
-            },
-            label = "Email",
-            error = emailError
-        )
-
-        Spacer(modifier = Modifier.height(20.dp))
-
-        // PASSWORD
-        CustomTextField(
-            value = password,
-            onValueChange = {
-                password = it
-                passwordError = null
-            },
-            label = "Password",
-            error = passwordError
-        )
-
-        Spacer(modifier = Modifier.height(24.dp))
-
-        Button(
-            onClick = {
-                // Validate all fields on submit
-                var valid = true
-
-                if (username.isEmpty()) {
-                    usernameError = "Username is required"
-                    valid = false
-                }
-                if (email.isEmpty()) {
-                    emailError = "Email is required"
-                    valid = false
-                }
-                if (password.isEmpty()) {
-                    passwordError = "Password is required"
-                    valid = false
-                }
-
-                if (valid) {
-                    viewModel.register(username, email, password)
-                }
-            },
-            enabled = !state.loading,
-            modifier = Modifier.fillMaxWidth()
+        // BOTTOM SECTION
+        Column(
+            modifier = Modifier
+                .align(Alignment.BottomCenter)
+                .padding(bottom = 12.dp)
+                .fillMaxWidth(),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.spacedBy(Dimens.Space75)
         ) {
-            Text(if (state.loading) "Creating account..." else "Create Account")
+
+            val isButtonEnabled =
+                username.isNotEmpty() &&
+                        email.isNotEmpty() &&
+                        password.isNotEmpty() &&
+                        usernameError == null &&
+                        emailError == null &&
+                        passwordError == null &&
+                        !state.loading
+
+            CustomButton(
+                value = "Create Account",
+                enabled = isButtonEnabled,
+                onClick = {
+                    var valid = true
+
+                    if (username.isEmpty()) {
+                        usernameError = "Username is required"
+                        valid = false
+                    }
+                    if (email.isEmpty()) {
+                        emailError = "Email is required"
+                        valid = false
+                    }
+                    if (password.isEmpty()) {
+                        passwordError = "Password is required"
+                        valid = false
+                    }
+
+                    if (valid) {
+                        viewModel.register(username, email, password)
+                    }
+                }
+            )
+
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(Dimens.Space25),
+                horizontalArrangement = Arrangement.spacedBy(
+                    Dimens.Space25,
+                    Alignment.CenterHorizontally
+                ),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    text = "Already have an account?",
+                    style = AppTypography.Caption1,
+                    color = BaseColor100
+                )
+                LinkButton(value = "Log In", onClick = {})
+            }
         }
     }
 }
