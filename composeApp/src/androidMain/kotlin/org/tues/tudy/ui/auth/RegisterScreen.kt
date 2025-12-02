@@ -1,10 +1,21 @@
 package org.tues.tudy.ui.auth
 
+import org.tues.tudy.R
 import CustomTextField
+import PrimaryColor2
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.gestures.snapping.SnapPosition
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalFocusManager
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import org.tues.tudy.viewmodel.RegisterState
@@ -26,15 +37,40 @@ fun RegisterScreen(
     var emailError by remember { mutableStateOf<String?>(null) }
     var passwordError by remember { mutableStateOf<String?>(null) }
 
+    val focusManager = LocalFocusManager.current
+
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(16.dp),
+            .padding(16.dp)
+            .clickable(
+                interactionSource = remember { MutableInteractionSource() },
+                indication = null
+            ) {
+                focusManager.clearFocus()
+            },
         verticalArrangement = Arrangement.Center
     ) {
-        Text(text = "Create Account", style = MaterialTheme.typography.headlineMedium)
+        Column(
+            modifier = Modifier
+                .fillMaxWidth(),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.spacedBy(Dimens.Space50)
+        ) {
+            Image(
+                painter = painterResource(id = R.drawable.tudylogo),
+                contentDescription = "App Logo"
+            )
 
-        Spacer(modifier = Modifier.height(24.dp))
+            Text(
+                text = "Create Account",
+                style = AppTypography.Heading3,
+                color = PrimaryColor2,
+                textAlign = TextAlign.Center
+            )
+        }
+
+        Spacer(modifier = Modifier.height(Dimens.Space450))
 
         // USERNAME
         CustomTextField(
@@ -101,14 +137,6 @@ fun RegisterScreen(
             modifier = Modifier.fillMaxWidth()
         ) {
             Text(if (state.loading) "Creating account..." else "Create Account")
-        }
-
-        state.error?.let {
-            Text(text = it, color = MaterialTheme.colorScheme.error)
-        }
-
-        state.success?.let {
-            Text(text = it, color = MaterialTheme.colorScheme.primary)
         }
     }
 }
