@@ -1,5 +1,6 @@
 package org.tues.tudy.ui.auth
 
+import CustomTextField
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -15,11 +16,15 @@ fun RegisterScreen(
     previewState: RegisterState? = null
 ) {
     val state = previewState ?: viewModel.state.collectAsState().value
+
     var username by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
 
-    //val state = viewModel.state.collectAsState().value
+    // Error states for each field
+    var usernameError by remember { mutableStateOf<String?>(null) }
+    var emailError by remember { mutableStateOf<String?>(null) }
+    var passwordError by remember { mutableStateOf<String?>(null) }
 
     Column(
         modifier = Modifier
@@ -31,31 +36,67 @@ fun RegisterScreen(
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        OutlinedTextField(
+        // USERNAME
+        CustomTextField(
             value = username,
-            onValueChange = { username = it },
-            label = { Text("Username") },
-            modifier = Modifier.fillMaxWidth()
+            onValueChange = {
+                username = it
+                usernameError = null // clear error on typing
+            },
+            label = "Username",
+            error = usernameError
         )
 
-        OutlinedTextField(
+        Spacer(modifier = Modifier.height(20.dp))
+
+        // EMAIL
+        CustomTextField(
             value = email,
-            onValueChange = { email = it },
-            label = { Text("Email") },
-            modifier = Modifier.fillMaxWidth()
+            onValueChange = {
+                email = it
+                emailError = null
+            },
+            label = "Email",
+            error = emailError
         )
 
-        OutlinedTextField(
+        Spacer(modifier = Modifier.height(20.dp))
+
+        // PASSWORD
+        CustomTextField(
             value = password,
-            onValueChange = { password = it },
-            label = { Text("Password") },
-            modifier = Modifier.fillMaxWidth()
+            onValueChange = {
+                password = it
+                passwordError = null
+            },
+            label = "Password",
+            error = passwordError
         )
 
         Spacer(modifier = Modifier.height(24.dp))
 
         Button(
-            onClick = { viewModel.register(username, email, password) },
+            onClick = {
+                // Validate all fields on submit
+                var valid = true
+
+                if (username.isEmpty()) {
+                    usernameError = "Username is required"
+                    valid = false
+                }
+                if (email.isEmpty()) {
+                    emailError = "Email is required"
+                    valid = false
+                }
+                if (password.isEmpty()) {
+                    passwordError = "Password is required"
+                    valid = false
+                }
+
+                if (valid) {
+                    viewModel.register(username, email, password)
+                }
+            },
             enabled = !state.loading,
             modifier = Modifier.fillMaxWidth()
         ) {
