@@ -4,7 +4,9 @@ import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -60,8 +62,14 @@ fun CustomTextField(
         ) {
             TextField(
                 value = value,
-                onValueChange = onValueChange,textStyle = AppTypography.Paragraph1.copy(color = stateColor),
-                placeholder = { Text(text = label, style = AppTypography.Caption1.copy(color = BaseColor80)) },
+                onValueChange = onValueChange,
+                textStyle = AppTypography.Paragraph1.copy(color = stateColor),
+                placeholder = {
+                    Text(
+                        text = label,
+                        style = AppTypography.Caption1.copy(color = BaseColor80)
+                    )
+                },
                 modifier = Modifier
                     .fillMaxWidth()
                     .onFocusChanged { isFocused.value = it.isFocused },
@@ -74,5 +82,17 @@ fun CustomTextField(
                 ),
             )
         }
+        Spacer(modifier = Modifier.height(Dimens.Space25))
+        if (error != null) {
+            Text(
+                text = error,
+                color = ErrorColor,
+                style = AppTypography.Caption2,
+                modifier = Modifier.padding(start = Dimens.Space75)
+            )
+        } else {
+            Spacer(modifier = Modifier.height(Dimens.Space100))
+        }
     }
 }
+
