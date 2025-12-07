@@ -4,6 +4,7 @@ import BaseColor100
 import org.tues.tudy.R
 import CustomTextField
 import PrimaryColor2
+import android.widget.MediaController
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
@@ -21,9 +22,11 @@ import org.tues.tudy.ui.components.CustomButton
 import org.tues.tudy.ui.components.LinkButton
 import org.tues.tudy.viewmodel.RegisterState
 import org.tues.tudy.viewmodel.RegisterViewModel
+import androidx.navigation.NavController
 
 @Composable
 fun RegisterScreen(
+    navController: NavController,
     viewModel: RegisterViewModel = viewModel(),
     previewState: RegisterState? = null
 ) {
@@ -140,12 +143,26 @@ fun RegisterScreen(
                         usernameError = "Username is required"
                         valid = false
                     }
+                    val usernameRegex = Regex("^[a-zA-Z0-9_]+$")
+                    if (!username.matches(usernameRegex)) {
+                        usernameError = "Username can only contain letters, numbers, and underscores"
+                        valid = false
+                    }
                     if (email.isEmpty()) {
                         emailError = "Email is required"
                         valid = false
                     }
+                    val emailRegex = Regex("^[^\\s@]+@[^\\s@]+\\.[^\\s@]+\$")
+                    if (!email.matches(emailRegex)) {
+                        emailError = "Invalid email address"
+                        valid = false
+                    }
                     if (password.isEmpty()) {
                         passwordError = "Password is required"
+                        valid = false
+                    }
+                    if (password.length < 8) {
+                        passwordError = "Pasword must be at least 8 characters long"
                         valid = false
                     }
 
@@ -154,6 +171,14 @@ fun RegisterScreen(
                     }
                 }
             )
+
+            LaunchedEffect(state.success) {
+                if (state.success != null) {
+                    navController.navigate("home") {
+                        // optional nav options: popUpTo("register") { inclusive = true }
+                    }
+                }
+            }
 
             Row(
                 modifier = Modifier

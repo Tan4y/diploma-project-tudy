@@ -3,25 +3,21 @@ package org.tues.tudy
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.tooling.preview.Preview
-import org.tues.tudy.ui.auth.RegisterScreen
-import org.tues.tudy.viewmodel.RegisterState
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.navigation.compose.rememberNavController
+import org.tues.tudy.ui.navigation.AppNavGraph
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-        enableEdgeToEdge()
         super.onCreate(savedInstanceState)
-
         setContent {
-            RegisterScreen()
+            // create nav controller
+            val navController = rememberNavController()
+            // host your nav graph
+            Surface(color = MaterialTheme.colorScheme.background) {
+                AppNavGraph(navController)
+            }
         }
     }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun RegisterScreenPreview() {
-    RegisterScreen(previewState = RegisterState())
 }
