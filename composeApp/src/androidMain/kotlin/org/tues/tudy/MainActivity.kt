@@ -12,9 +12,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            // create nav controller
             val navController = rememberNavController()
-            // host your nav graph
             Surface(color = MaterialTheme.colorScheme.background) {
                 AppNavGraph(navController)
             }
