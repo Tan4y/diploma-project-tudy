@@ -3,7 +3,9 @@ package org.tues.tudy.ui.auth
 import BaseColor100
 import org.tues.tudy.R
 import CustomTextField
+import ErrorScreen
 import PrimaryColor2
+import SuccessScreen
 import android.widget.MediaController
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
@@ -23,6 +25,7 @@ import org.tues.tudy.ui.components.LinkButton
 import org.tues.tudy.viewmodel.RegisterState
 import org.tues.tudy.viewmodel.RegisterViewModel
 import androidx.navigation.NavController
+import org.tues.tudy.ui.components.LogoPlusTitle
 
 @Composable
 fun RegisterScreen(
@@ -60,21 +63,7 @@ fun RegisterScreen(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
 
-            Column(
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.spacedBy(Dimens.Space50)
-            ) {
-                Image(
-                    painter = painterResource(id = R.drawable.tudylogo),
-                    contentDescription = "App Logo"
-                )
-
-                Text(
-                    text = "Create Account",
-                    style = AppTypography.Heading3,
-                    color = PrimaryColor2
-                )
-            }
+            LogoPlusTitle("Create Account")
 
             Spacer(modifier = Modifier.height(Dimens.Space450))
 
@@ -145,7 +134,8 @@ fun RegisterScreen(
                     }
                     val usernameRegex = Regex("^[a-zA-Z0-9_]+$")
                     if (!username.matches(usernameRegex)) {
-                        usernameError = "Username can only contain letters, numbers, and underscores"
+                        usernameError =
+                            "Username can only contain letters, numbers, and underscores"
                         valid = false
                     }
                     if (email.isEmpty()) {
@@ -168,17 +158,10 @@ fun RegisterScreen(
 
                     if (valid) {
                         viewModel.register(username, email, password)
+
                     }
                 }
             )
-
-            LaunchedEffect(state.success) {
-                if (state.success != null) {
-                    navController.navigate("home") {
-                        // optional nav options: popUpTo("register") { inclusive = true }
-                    }
-                }
-            }
 
             Row(
                 modifier = Modifier
@@ -195,7 +178,21 @@ fun RegisterScreen(
                     style = AppTypography.Caption1,
                     color = BaseColor100
                 )
-                LinkButton(value = "Log In", onClick = {})
+                LinkButton(value = "Log In", onClick = { navController.navigate("login") })
+            }
+        }
+
+        when {
+            state.success != null -> {
+                navController.navigate("success") {
+                    popUpTo("register") { inclusive = true }
+                }
+                return
+            }
+
+            state.error != null -> {
+                navController.navigate("error")
+                return
             }
         }
     }

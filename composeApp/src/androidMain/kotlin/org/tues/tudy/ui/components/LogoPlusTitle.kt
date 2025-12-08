@@ -3,10 +3,14 @@ package org.tues.tudy.ui.components
 import BaseColor0
 import Dimens.BorderRadius200
 import PrimaryColor1
+import PrimaryColor2
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentSize
@@ -15,24 +19,28 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import org.tues.tudy.R
 
 @Composable
-fun LinkButton (
+fun LogoPlusTitle (
     value: String,
-    onClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-    Box(
-        modifier = modifier
-            .wrapContentSize()
-            .clickable() { onClick() }
-            .padding(Dimens.Space25),
-        contentAlignment = Alignment.Center
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.spacedBy(Dimens.Space50)
     ) {
+        Image(
+            painter = painterResource(id = R.drawable.tudylogo),
+            contentDescription = "App Logo"
+        )
+
         Text(
             text = value,
-            style = AppTypography.UnderlinedHeading6.copy(color = PrimaryColor1)
+            style = AppTypography.Heading3,
+            color = PrimaryColor2
         )
     }
 }
