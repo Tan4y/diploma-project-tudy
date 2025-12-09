@@ -98,7 +98,18 @@ fun RegisterScreen(
                     passwordError = null
                 },
                 label = "Password",
-                error = passwordError
+                error = passwordError,
+//                trailingIcon = {
+//                    Icon(
+//                        imageVector = if (passwordVisible) Icons.Default.Visibility
+//                        else Icons.Default.VisibilityOff,
+//                        contentDescription = null,
+//                        tint = PrimaryColor1,
+//                        modifier = Modifier.clickable {
+//                            passwordVisible = !passwordVisible
+//                        }
+//                    )
+//                }
             )
         }
 
